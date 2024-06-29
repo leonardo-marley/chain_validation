@@ -29,7 +29,12 @@ public class Main {
 
         ChainValidator validator = new ChainValidator();
         boolean isValid = validator.validate(nodes);
-        System.out.println("Is the chain valid? " + isValid);
+
+        if (isValid) {
+            System.out.println("Valid Chain");
+        } else {
+            System.out.println("Not Valid Chain");
+        }
     }
 
     private static boolean isNumeric(String str) {
