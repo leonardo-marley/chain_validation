@@ -15,10 +15,15 @@ public class Main {
 
         if (isNumeric(values[0])) {
             for (String value : values) {
+                if (value.length() > 2) {
+                    System.out.println("The numeric chain allows only two-digit numbers.");
+                    return;
+                }
                 nodes.add(new NumberNode(Integer.parseInt(value)));
             }
         } else {
             for (String value : values) {
+                value = value.toLowerCase();
                 if (value.length() == 1) {
                     nodes.add(new CharNode(value.charAt(0)));
                 } else {
